@@ -6,7 +6,8 @@ import android.view.View;
 import com.ruiqin.lazyload.R;
 import com.ruiqin.lazyload.base.BaseFragment;
 
-public class BlankFragment extends BaseFragment {
+public class HomePageFragment extends BaseFragment {
+
     @Override
     protected void lazyLoad() {
 
@@ -19,11 +20,11 @@ public class BlankFragment extends BaseFragment {
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-        
+
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_blank;
+        return R.layout.fragment_home_page;
     }
 }

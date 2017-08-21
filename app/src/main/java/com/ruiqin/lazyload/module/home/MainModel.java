@@ -1,7 +1,10 @@
 package com.ruiqin.lazyload.module.home;
 
-import com.ruiqin.lazyload.module.home.bean.MainRecyclerData;
-import com.ruiqin.lazyload.module.test.TestActivity;
+import android.support.v4.app.Fragment;
+
+import com.ruiqin.lazyload.module.HomePageFragment;
+import com.ruiqin.lazyload.module.MyInfoFragment;
+import com.ruiqin.lazyload.module.RepaymentListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +15,13 @@ import java.util.List;
  */
 
 public class MainModel implements MainContract.Model {
+
     @Override
-    public List<MainRecyclerData> initData() {
-        List<MainRecyclerData> recyclerDataList = new ArrayList<>();
-        recyclerDataList.add(new MainRecyclerData("TestActivity", TestActivity.class));
-        return recyclerDataList;
+    public List<Fragment> initFragmentData(List<Fragment> mFragments) {
+        mFragments = new ArrayList<Fragment>();
+        mFragments.add(new HomePageFragment());
+        mFragments.add(new RepaymentListFragment());
+        mFragments.add(new MyInfoFragment());
+        return mFragments;
     }
 }

@@ -1,9 +1,7 @@
 package com.ruiqin.lazyload.module.home;
 
-import com.ruiqin.lazyload.module.home.adapter.MainRecyclerAdapter;
-import com.ruiqin.lazyload.module.home.bean.MainRecyclerData;
+import android.support.v4.app.Fragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,28 +10,9 @@ import java.util.List;
  */
 
 public class MainPresenter extends MainContract.Presenter {
-    private MainRecyclerAdapter mainRecyclerAdapter;
-    private List<MainRecyclerData> mMainRecyclerDataList = new ArrayList<>();
 
     @Override
-    void setAdapter() {
-        initData();
-        if (mainRecyclerAdapter == null) {
-            mainRecyclerAdapter = new MainRecyclerAdapter(mMainRecyclerDataList);
-            mView.setRecyclerAdapterSuccess(mainRecyclerAdapter);
-        } else {
-            mainRecyclerAdapter.notifyDataSetChanged();
-        }
-    }
-
-    /**
-     * 复制
-     */
-    private void initData() {
-        List<MainRecyclerData> recyclerDataList = mModel.initData();
-        if (recyclerDataList != null) {
-            mMainRecyclerDataList.clear();
-            mMainRecyclerDataList.addAll(recyclerDataList);
-        }
+    void initFragmentData(List<Fragment> mFragments) {
+        mView.initFragmentDataSuccess(mModel.initFragmentData(mFragments));
     }
 }

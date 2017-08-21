@@ -37,4 +37,15 @@
         <item name="android:windowBackground">@color/transparent</item>//这句话不能少，否则dialog会出现黑色边框
     </style>
 
+    <!--导航栏-->
+    <style name="navbar_radiobutton">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_radiobutton</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

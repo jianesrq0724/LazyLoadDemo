@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+    <RadioButton
+        android:id="@+id/rdoBtn_main_pager"
+        style="@style/navbar_radiobutton"
+        android:layout_marginLeft="8dp"
+        android:checked="true"
+        android:drawableTop="@drawable/selector_main_navbar_0"
+        android:text="首页"/>
+
+    <RadioButton
+        android:id="@+id/rdoBtn_repayment"
+        style="@style/navbar_radiobutton"
+        android:drawableTop="@drawable/selector_main_navbar_1"
+        android:text="还款"/>
+
+    <RadioButton
+        android:id="@+id/rdoBtn_myinfo"
+        style="@style/navbar_radiobutton"
+        android:drawableTop="@drawable/selector_main_navbar_2"
+        android:text="我"/>
+
+</RadioGroup>

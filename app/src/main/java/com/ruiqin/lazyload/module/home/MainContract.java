@@ -1,10 +1,10 @@
 package com.ruiqin.lazyload.module.home;
 
+import android.support.v4.app.Fragment;
+
 import com.ruiqin.lazyload.base.BaseModel;
 import com.ruiqin.lazyload.base.BasePresenter;
 import com.ruiqin.lazyload.base.BaseView;
-import com.ruiqin.lazyload.module.home.adapter.MainRecyclerAdapter;
-import com.ruiqin.lazyload.module.home.bean.MainRecyclerData;
 
 import java.util.List;
 
@@ -15,14 +15,14 @@ import java.util.List;
 
 public interface MainContract {
     interface Model extends BaseModel {
-        List<MainRecyclerData> initData();
+        List<Fragment> initFragmentData(List<Fragment> fragments);
     }
 
     interface View extends BaseView {
-        void setRecyclerAdapterSuccess(MainRecyclerAdapter mainRecyclerAdapter);
+        void initFragmentDataSuccess(List<Fragment> fragments);
     }
 
     abstract class Presenter extends BasePresenter<View, Model> {
-        abstract void setAdapter();
+        abstract void initFragmentData(List<Fragment> fragments);
     }
 }
